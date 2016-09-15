@@ -1,0 +1,31 @@
+almanach_app_dir: /opt/almanach
+almanach_log_dir: /var/log/almanach
+almanach_log_file: /var/log/almanach/almanach.log
+almanach_config_dir: /etc/almanach
+almanach_config_file: /etc/almanach/almanach.cfg
+almanach_logging_config_file: /etc/almanach/logging.cfg
+almanach_logrotate_config_file: /etc/logrotate.d/almanach
+
+almanach_auth_token: secret
+almanach_auth_strategy: private_key
+almanach_volume_existence_threshold: 60
+almanach_metadata_whitelist: metering.billing_mode
+
+almanach_mongodb_url: mongodb://almanach:almanach@localhost:27017/almanach
+almanach_mongodb_database: almanach
+
+almanach_rabbitmq_url: amqp://openstack:openstack@localhost:5672
+almanach_rabbitmq_queue: almanach.info
+almanach_rabbitmq_exchange: almanach.info
+almanach_rabbitmq_routing_key: almanach.info
+almanach_rabbitmq_retry_time_to_live: 10
+almanach_rabbitmq_retry_maximum: 3
+almanach_rabbitmq_retry_queue: almanach.retry
+almanach_rabbitmq_retry_return_exchange: almanach
+almanach_rabbitmq_dead_queue: almanach.dead
+almanach_rabbitmq_dead_exchange: almanach.dead
+
+almanach_keystone_username: my_service_username
+almanach_keystone_password: my_service_password
+almanach_keystone_tenant_name: my_service_tenant_name
+almanach_keystone_auth_url: http://keystone_url:5000/v2.0

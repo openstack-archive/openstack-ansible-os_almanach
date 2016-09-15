@@ -1,0 +1,7 @@
+- hosts: api
+  gather_facts: False
+  become: True
+  roles:
+    - api
+  vars:
+    almanach_mongodb_url: mongodb://almanach:almanach@172.27.54.98:27017/almanach

@@ -1,0 +1,7 @@
+almanach_user: almanach
+almanach_group: almanach
+almanach_service_name: almanach-api
+
+almanach_nginx_hostname: default
+almanach_nginx_port: 80
+almanach_nginx_log_file: /var/log/nginx/default_access.log

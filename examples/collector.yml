@@ -1,0 +1,5 @@
+- hosts: collector
+  gather_facts: False
+  become: True
+  roles:
+    - collector
