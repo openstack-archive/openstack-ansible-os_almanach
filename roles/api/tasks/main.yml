@@ -13,10 +13,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- include: nginx.yml
-  when: use_nginx == True
-
-- include: netfilter.yml
-  when: use_netfilter == True
-
 - include: init_upstart.yml
