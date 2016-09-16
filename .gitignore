@@ -1,3 +1,4 @@
+playbook_*.yml
 *.egg-info
 *.pyc
 .tox

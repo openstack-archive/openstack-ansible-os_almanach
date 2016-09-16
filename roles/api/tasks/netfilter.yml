@@ -13,10 +13,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- include: nginx.yml
-  when: use_nginx == True
-
-- include: netfilter.yml
-  when: use_netfilter == True
-
-- include: init_upstart.yml
+- name: Forward port 80 to Almanach port
+  iptables: table=nat chain=PREROUTING in_interface={{ netfilter_iface }} protocol=tcp match=tcp destination_port=80 jump=REDIRECT to_ports={{ almanach_port }}
