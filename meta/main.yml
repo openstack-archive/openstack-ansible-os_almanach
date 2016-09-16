@@ -27,3 +27,4 @@ galaxy_info:
     - openstack
     - almanach
     - telemetry
+  dependencies:
