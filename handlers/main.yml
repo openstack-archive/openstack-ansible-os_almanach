@@ -13,22 +13,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-galaxy_info:
-  author: fguillot
-  description: Installation and setup of almanach
-  company: Internap
-  license: Apache2
-  min_ansible_version: 1.9
-  platforms:
-  - name: Ubuntu
-    versions:
-      - trusty
-  galaxy_tags:
-    - cloud
-    - python
-    - openstack
-    - almanach
-    - telemetry
-  dependencies:
-    - pip_install
-    - openstack_openrc
+- name: Restart almanach collector
+  service:
+    name: "{{ almanach_collector_program_name }}"
+    state: "restarted"
+    pattern: "{{ almanach_collector_program_name }}"
+
+- name: Restart almanach api
+  service:
+    name: "{{ almanach_api_program_name }}"
+    state: "restarted"
+    pattern: "{{ almanach_api_program_name }}"
+
+- name: Restart almanach services
+  service:
+    name: "{{ item }}"
+    state: "restarted"
+    pattern: "{{ item }}"
+  with_items: "{{ almanach_service_names }}"
+  failed_when: false

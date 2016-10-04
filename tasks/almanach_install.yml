@@ -13,22 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-galaxy_info:
-  author: fguillot
-  description: Installation and setup of almanach
-  company: Internap
-  license: Apache2
-  min_ansible_version: 1.9
-  platforms:
-  - name: Ubuntu
-    versions:
-      - trusty
-  galaxy_tags:
-    - cloud
-    - python
-    - openstack
-    - almanach
-    - telemetry
-  dependencies:
-    - pip_install
-    - openstack_openrc
+- name: Update APT index
+  apt: update_cache=yes
+  become: True
+
+- name: Install Python dependencies
+  apt: name={{ item }} state=present
+  with_items:
+    - python-dev
+    - python-pip
+    - python-virtualenv
+
+- name: Install Almanach
+  pip: name=almanach virtualenv={{ almanach_app_dir }} virtualenv_python=python2.7

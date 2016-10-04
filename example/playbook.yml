@@ -1,0 +1,5 @@
+- name: Install almanach server
+  hosts: almanach_all
+  user: root
+  roles:
+    - { role: "os_almanach" }

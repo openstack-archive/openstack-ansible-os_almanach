@@ -13,22 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-galaxy_info:
-  author: fguillot
-  description: Installation and setup of almanach
-  company: Internap
-  license: Apache2
-  min_ansible_version: 1.9
-  platforms:
-  - name: Ubuntu
-    versions:
-      - trusty
-  galaxy_tags:
-    - cloud
-    - python
-    - openstack
-    - almanach
-    - telemetry
-  dependencies:
-    - pip_install
-    - openstack_openrc
+- name: Playbook for deploying Almanach
+  hosts: almanach_all
+  user: root
+  gather_facts: true
+  roles:
+    - role: "{{ rolename | basename }}"
+  vars_files:
+    - test-vars.yml

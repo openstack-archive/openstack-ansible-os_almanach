@@ -13,22 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-galaxy_info:
-  author: fguillot
-  description: Installation and setup of almanach
-  company: Internap
-  license: Apache2
-  min_ansible_version: 1.9
-  platforms:
-  - name: Ubuntu
-    versions:
-      - trusty
-  galaxy_tags:
-    - cloud
-    - python
-    - openstack
-    - almanach
-    - telemetry
-  dependencies:
-    - pip_install
-    - openstack_openrc
+almanach_mongodb_url: mongodb://almanach:secrete@10.100.100.2:27017/almanach
+almanach_mongodb_database: almanach
+
+internal_lb_vip_address: 10.100.100.2
+external_lb_vip_address: 10.100.100.2
+
+rabbitmq_servers: 10.100.100.2
+rabbitmq_use_ssl: true
+rabbitmq_port: 5671

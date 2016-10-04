@@ -1,5 +1,0 @@
-- hosts: database
-  gather_facts: False
-  become: True
-  roles:
-    - database

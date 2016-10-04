@@ -1,0 +1,27 @@
+[all]
+localhost ansible_connection=local ansible_become=True ansible_user=root ansible_ssh_user=root
+infra1 ansible_ssh_host=10.100.100.2 ansible_host=10.100.100.2 ansible_become=True ansible_user=root
+openstack1 ansible_ssh_host=10.100.100.3 ansible_host=10.100.100.3 ansible_become=True ansible_user=root
+
+[all_containers]
+infra1
+openstack1
+
+[rabbitmq_all]
+infra1
+
+[service_all:children]
+rabbitmq_all
+
+[keystone_all]
+infra1
+
+[almanach_api]
+openstack1
+
+[almanach_collector]
+openstack1
+
+[almanach_all:children]
+almanach_api
+almanach_collector

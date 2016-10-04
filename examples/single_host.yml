@@ -1,7 +1,0 @@
-- hosts: single_host
-  gather_facts: False
-  become: True
-  roles:
-    - database
-    - collector
-    - api
