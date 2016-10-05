@@ -13,8 +13,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- include: almanach_init_api.yml
-  when: inventory_hostname in groups['almanach_api']
+- include: almanach_init_api_upstart.yml
+  when: inventory_hostname in groups['almanach_api'] and pid1_name == "init"
 
-- include: almanach_init_collector.yml
-  when: inventory_hostname in groups['almanach_collector']
+- include: almanach_init_collector_upstart.yml
+  when: inventory_hostname in groups['almanach_collector'] and pid1_name == "init"
+
+- include: almanach_init_api_systemd.yml
+  when: inventory_hostname in groups['almanach_api'] and pid1_name == "systemd"
+
+- include: almanach_init_collector_systemd.yml
+  when: inventory_hostname in groups['almanach_collector'] and pid1_name == "systemd"

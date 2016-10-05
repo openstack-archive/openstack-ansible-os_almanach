@@ -1,0 +1,20 @@
+# {{ ansible_managed }}
+
+[Unit]
+Description=Almanach collector openstack service
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+User={{ almanach_system_user_name }}
+Group={{ almanach_system_group_name }}
+
+ExecStart={{ almanach_app_dir }}/bin/almanach collector {{ almanach_config_file }} --logging {{ almanach_logging_config_file }}
+
+TimeoutSec=300
+Restart=on-failure
+RestartSec=150
+
+[Install]
+WantedBy=multi-user.target

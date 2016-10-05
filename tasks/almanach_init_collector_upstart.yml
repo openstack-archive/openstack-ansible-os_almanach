@@ -15,8 +15,8 @@
 
 - name: Place the init script
   template:
-    src: "almanach-api-upstart-init.j2"
-    dest: "/etc/init/{{ almanach_api_program_name }}.conf"
+    src: "almanach-collector-upstart.j2"
+    dest: "/etc/init/{{ almanach_collector_program_name }}.conf"
     mode: "0644"
     owner: "root"
     group: "root"
@@ -33,7 +33,7 @@
 
 - name: Load service
   service:
-    name: "{{ almanach_api_program_name }}"
+    name: "{{ almanach_collector_program_name }}"
     enabled: "yes"
   notify:
     - Restart almanach services
