@@ -20,9 +20,12 @@
 - name: Install Python dependencies
   apt: name={{ item }} state=present
   with_items:
+    - python2.7
     - python-dev
     - python-pip
-    - python-virtualenv
+
+- name: Install Virtualenv
+  pip: name=virtualenv state=latest
 
 - name: Install Almanach
   pip: name=almanach virtualenv={{ almanach_app_dir }} virtualenv_python=python2.7
