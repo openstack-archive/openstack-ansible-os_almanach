@@ -13,14 +13,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- include: test-prepare-keys.yml
+# Setup the host
+- include: common/test-setup-host.yml
 
-- include: test-prepare-host.yml
+# Install RabbitMQ/MariaDB
+- include: common/test-install-infra.yml
 
-- include: test-prepare-containers.yml
+# Install Keystone
+- include: common/test-install-keystone.yml
 
-- include: test-install-infra.yml
-
+# Install Almanach
 - include: test-install-almanach.yml
 
+# Test Almanach
 - include: test-functional-almanach.yml
