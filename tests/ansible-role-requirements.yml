@@ -6,8 +6,8 @@
   src: https://git.openstack.org/openstack/openstack-ansible-pip_install
   scm: git
   version: master
-- name: memcached_server
-  src: https://git.openstack.org/openstack/openstack-ansible-memcached_server
+- name: openstack_hosts
+  src: https://git.openstack.org/openstack/openstack-ansible-openstack_hosts
   scm: git
   version: master
 - name: lxc_hosts
@@ -16,6 +16,10 @@
   version: master
 - name: lxc_container_create
   src: https://git.openstack.org/openstack/openstack-ansible-lxc_container_create
+  scm: git
+  version: master
+- name: memcached_server
+  src: https://git.openstack.org/openstack/openstack-ansible-memcached_server
   scm: git
   version: master
 - name: galera_client
@@ -30,15 +34,11 @@
   src: https://git.openstack.org/openstack/openstack-ansible-rabbitmq_server
   scm: git
   version: master
-- name: os_keystone
-  src: https://git.openstack.org/openstack/openstack-ansible-os_keystone
-  scm: git
-  version: master
 - name: openstack_openrc
   src: https://git.openstack.org/openstack/openstack-ansible-openstack_openrc
   scm: git
   version: master
-- name: os_tempest
-  src: https://git.openstack.org/openstack/openstack-ansible-os_tempest
+- name: os_keystone
+  src: https://git.openstack.org/openstack/openstack-ansible-os_keystone
   scm: git
   version: master
