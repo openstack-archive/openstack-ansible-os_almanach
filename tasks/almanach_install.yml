@@ -20,6 +20,7 @@
 - name: Install Python dependencies
   apt: name={{ item }} state=present
   with_items:
+    - python2.7
     - python-dev
     - python-pip
     - python-virtualenv

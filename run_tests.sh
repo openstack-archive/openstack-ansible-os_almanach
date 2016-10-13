@@ -15,6 +15,8 @@
 
 set -euov
 
+FUNCTIONAL_TEST=${FUNCTIONAL_TEST:-true}
+
 # Install pip
 if [ ! "$(which pip)" ]; then
   curl --silent --show-error --retry 5 \
@@ -22,29 +24,32 @@ if [ ! "$(which pip)" ]; then
 fi
 
 # Install bindep and tox
-pip install bindep tox
+sudo pip install bindep tox
 
 # CentOS 7 requires two additional packages:
 #   redhat-lsb-core - for bindep profile support
 #   epel-release    - required to install python-ndg_httpsclient/python2-pyasn1
 if [ "$(which yum)" ]; then
-    yum -y install redhat-lsb-core epel-release
+    sudo yum -y install redhat-lsb-core epel-release
 fi
 
 # Install OS packages using bindep
 if apt-get -v >/dev/null 2>&1 ; then
-    apt-get update
+    sudo apt-get update
     DEBIAN_FRONTEND=noninteractive \
-      apt-get -q --option "Dpkg::Options::=--force-confold" \
+      sudo apt-get -q --option "Dpkg::Options::=--force-confold" \
       --assume-yes install `bindep -b -f bindep.txt test`
 else
-    yum install -y `bindep -b -f bindep.txt test`
+    sudo yum install -y `bindep -b -f bindep.txt test`
 fi
 
-if [ ! -d /openstack/log ]; then
-    mkdir -p /openstack/log
-fi
-
-pip install lxc-python2
-
-tox -e functional
+# run through each tox env and execute the test
+for tox_env in $(awk -F= '/envlist/ {print $2}' tox.ini | sed 's/,/ /g'); do
+  if [ "${tox_env}" != "ansible-functional" ]; then
+    tox -e ${tox_env}
+  elif [ "${tox_env}" == "ansible-functional" ]; then
+    if ${FUNCTIONAL_TEST}; then
+      tox -e ${tox_env}
+    fi
+  fi
+done
