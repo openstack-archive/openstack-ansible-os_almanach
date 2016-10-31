@@ -1,0 +1,8 @@
+Code-Review+2: Frédéric Guillot <fguillot@internap.com>
+Workflow+1: Frédéric Guillot <fguillot@internap.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 31 Oct 2016 19:02:10 +0000
+Reviewed-on: https://review.openstack.org/386233
+Project: openstack/openstack-ansible-os_almanach
+Branch: refs/heads/master
