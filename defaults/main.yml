@@ -32,7 +32,6 @@ almanach_app_dir: /opt/almanach
 
 almanach_config_dir: /etc/almanach
 almanach_config_file: /etc/almanach/almanach.cfg
-almanach_logging_config_file: /etc/almanach/logging.cfg
 almanach_logrotate_config_file: /etc/logrotate.d/almanach
 
 almanach_auth_token: secret
