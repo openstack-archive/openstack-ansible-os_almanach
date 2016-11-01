@@ -17,15 +17,16 @@
   apt: update_cache=yes
   become: True
 
-- name: Install Python dependencies
-  apt: name={{ item }} state=present
-  with_items:
-    - python2.7
-    - python-dev
-    - python-pip
+- name: Install apt packages
+  apt:
+    name: "{{ almanach_requires_apt_packages | join(' ') }}"
+    state: present
 
-- name: Install Virtualenv
-  pip: name=virtualenv state=latest
+- name: Install pip packages
+  pip:
+    name: "{{ almanach_requires_pip_packages | join(' ') }}"
+    state: present
+    executable: pip3
 
 - name: Install Almanach
-  pip: name=almanach virtualenv={{ almanach_app_dir }} virtualenv_python=python2.7
+  pip: name=almanach version={{ almanach_version }} virtualenv={{ almanach_app_dir }} virtualenv_python=python3

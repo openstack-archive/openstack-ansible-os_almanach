@@ -10,7 +10,7 @@ Type=simple
 User={{ almanach_system_user_name }}
 Group={{ almanach_system_group_name }}
 
-ExecStart={{ almanach_app_dir }}/bin/almanach collector {{ almanach_config_file }} --logging {{ almanach_logging_config_file }}
+ExecStart={{ almanach_app_dir }}/bin/almanach-collector --config-file={{ almanach_config_file }} --log-file={{ almanach_log_file }}
 
 TimeoutSec=300
 Restart=on-failure

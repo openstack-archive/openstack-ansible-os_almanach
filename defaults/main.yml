@@ -13,12 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+almanach_version: 3.3.2
+
 almanach_collector_program_name: almanach-collector
 almanach_api_program_name: almanach-api
 
 almanach_service_names:
   - "almanach-api"
   - "almanach-collector"
+
+almanach_requires_apt_packages:
+  - python3-pip
+
+almanach_requires_pip_packages:
+  - virtualenv
 
 almanach_system_user_name: almanach
 almanach_system_group_name: almanach
@@ -32,7 +40,6 @@ almanach_app_dir: /opt/almanach
 
 almanach_config_dir: /etc/almanach
 almanach_config_file: /etc/almanach/almanach.cfg
-almanach_logging_config_file: /etc/almanach/logging.cfg
 almanach_logrotate_config_file: /etc/logrotate.d/almanach
 
 almanach_auth_token: secret

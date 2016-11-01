@@ -10,5 +10,5 @@ setuid {{ almanach_system_user_name }}
 setgid {{ almanach_system_group_name }}
 
 script
-    exec {{ almanach_app_dir }}/bin/almanach api {{ almanach_config_file }} --host {{ almanach_listen_ip }} --port {{ almanach_port }} --logging {{ almanach_logging_config_file }}
+    exec {{ almanach_app_dir }}/bin/almanach-api --config-file={{ almanach_config_file }} --log-file={{ almanach_log_file }}
 end script
