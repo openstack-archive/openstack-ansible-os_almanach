@@ -1,29 +1,109 @@
-[ALMANACH]
-auth_token={{ almanach_auth_token }}
-auth_strategy={{ almanach_auth_strategy }}
-volume_existence_threshold={{ almanach_volume_existence_threshold }}
-device_metadata_whitelist={{ almanach_metadata_whitelist }}
+[DEFAULT]
 
-[MONGODB]
-url={{ almanach_mongodb_url }}
-database={{ almanach_mongodb_database }}
-indexes=project_id,start,end
+[api]
 
-[RABBITMQ]
-url={{ almanach_rabbitmq_url }}
-queue={{ almanach_rabbitmq_queue }}
-exchange={{ almanach_rabbitmq_exchange }}
-routing.key={{ almanach_rabbitmq_routing_key }}
-retry.time.to.live={{ almanach_rabbitmq_retry_time_to_live }}
-retry.exchange={{ almanach_rabbitmq_exchange }}
-retry.maximum={{ almanach_rabbitmq_retry_maximum }}
-retry.queue={{ almanach_rabbitmq_retry_queue }}
-retry.return.exchange={{ almanach_rabbitmq_retry_return_exchange }}
-dead.queue={{ almanach_rabbitmq_dead_queue }}
-dead.exchange={{ almanach_rabbitmq_dead_exchange }}
+#
+# From almanach
+#
 
-[KEYSTONE]
-username={{ almanach_keystone_username }}
-password={{ almanach_keystone_password }}
-tenant_name={{ almanach_keystone_tenant_name }}
-auth_url={{ almanach_keystone_auth_url }}
+# IP address to listen on (IP address value)
+bind_ip = {{ almanach_listen_ip }}
+
+# TCP port number to listen on (port value)
+# Minimum value: 0
+# Maximum value: 65535
+bind_port = {{ almanach_port }}
+
+
+[auth]
+
+#
+# From almanach
+#
+
+# Authentication driver for the API (string value)
+strategy = {{ almanach_auth_strategy }}
+
+# Private key for private key authentication (string value)
+private_key = {{ almanach_auth_token }}
+
+# Keystone service username (string value)
+keystone_username = {{ almanach_keystone_username }}
+
+# Keystone service password (string value)
+keystone_password = {{ almanach_keystone_password }}
+
+# Keystone service tenant (string value)
+keystone_tenant = {{ almanach_keystone_tenant_name }}
+
+# Keystone URL (string value)
+keystone_url = {{ almanach_keystone_auth_url }}
+
+
+[collector]
+
+#
+# From almanach
+#
+
+# RabbitMQ connection URL (string value)
+url = {{ almanach_rabbitmq_url }}
+
+# RabbitMQ connection heartbeat (integer value)
+heartbeat = 540
+
+# Default queue name (string value)
+default_queue = {{ almanach_rabbitmq_queue }}
+
+# Default exchange name (string value)
+default_exchange = {{ almanach_rabbitmq_exchange }}
+
+# Default queue routing key (string value)
+default_routing_key = {{ almanach_rabbitmq_routing_key }}
+
+# Retry queue name (string value)
+retry_queue = {{ almanach_rabbitmq_retry_queue }}
+
+# Retry exchange name (string value)
+retry_exchange = {{ almanach_rabbitmq_exchange }}
+
+# Time to live value of messages sent on the retry queue (integer
+# value)
+retry_ttl = {{ almanach_rabbitmq_retry_time_to_live }}
+
+# Maximal number of message retries (integer value)
+max_retries = {{ almanach_rabbitmq_retry_maximum }}
+
+# Dead queue name (string value)
+dead_queue = {{ almanach_rabbitmq_dead_queue }}
+
+# Dead exchange name (string value)
+dead_exchange = {{ almanach_rabbitmq_dead_exchange }}
+
+
+[database]
+
+#
+# From almanach
+#
+
+# Database driver (string value)
+driver = mongodb
+
+# Database connection URL (string value)
+connection_url = {{ almanach_mongodb_url }}
+
+
+[resources]
+
+#
+# From almanach
+#
+
+# Volume existence threshold (integer value)
+volume_existence_threshold = {{ almanach_volume_existence_threshold }}
+
+# DEPRECATED: Metadata to include in entity (string value)
+# This option is deprecated for removal.
+# Its value may be silently ignored in the future.
+device_metadata_whitelist = {{ almanach_metadata_whitelist }}

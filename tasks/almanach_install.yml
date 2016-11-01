@@ -23,9 +23,7 @@
     - python2.7
     - python-dev
     - python-pip
-
-- name: Install Virtualenv
-  pip: name=virtualenv state=latest
+    - python-virtualenv
 
 - name: Install Almanach
   pip: name=almanach virtualenv={{ almanach_app_dir }} virtualenv_python=python2.7
