@@ -10,5 +10,5 @@ setuid {{ almanach_system_user_name }}
 setgid {{ almanach_system_group_name }}
 
 script
-    exec {{ almanach_app_dir }}/bin/almanach collector {{ almanach_config_file }} --logging {{ almanach_logging_config_file }}
+    exec {{ almanach_app_dir }}/bin/almanach-collector --config-file={{ almanach_config_file }} --log-file={{ almanach_log_file }}
 end script
