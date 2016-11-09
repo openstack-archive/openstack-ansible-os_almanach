@@ -19,12 +19,12 @@
 
 - name: Install apt packages
   apt:
-    name: "{{ almanach_requires_apt_packages | join(' ') }}"
+    name: "{{ almanach_requires_apt_packages }}"
     state: present
 
 - name: Install pip packages
   pip:
-    name: "{{ almanach_requires_pip_packages | join(' ') }}"
+    name: "{{ almanach_requires_pip_packages }}"
     state: present
     executable: pip3
 
