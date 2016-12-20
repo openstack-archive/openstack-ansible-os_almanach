@@ -17,3 +17,8 @@ This Ansible role installs and configures OpenStack Almanach on Ubuntu 14.04 and
 This role will install the following Upstart services:
     * almanach-api
     * almanach-collector
+
+Reporting bugs and contributing
+========================
+
+For bug reporting and contributing, please check the CONTRIBUTING.rst.
