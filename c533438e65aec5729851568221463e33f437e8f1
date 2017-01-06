@@ -1,0 +1,10 @@
+Code-Review+2: David Wilde <david.wilde@rackspace.com>
+Code-Review+1: haven shi <haiwen.shi01@gmail.com>
+Code-Review+1: Amy Marrich (spotz) <amy@demarco.com>
+Workflow+1: Frédéric Guillot <fguillot@internap.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 06 Jan 2017 18:19:50 +0000
+Reviewed-on: https://review.openstack.org/417444
+Project: openstack/openstack-ansible-os_almanach
+Branch: refs/heads/master
