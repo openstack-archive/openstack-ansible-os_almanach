@@ -14,21 +14,19 @@
 # limitations under the License.
 
 - name: Restart almanach collector
-  service:
+  systemd:
     name: "{{ almanach_collector_program_name }}"
     state: "restarted"
-    pattern: "{{ almanach_collector_program_name }}"
+    daemon_reload: "yes"
 
 - name: Restart almanach api
-  service:
+  systemd:
     name: "{{ almanach_api_program_name }}"
     state: "restarted"
-    pattern: "{{ almanach_api_program_name }}"
 
 - name: Restart almanach services
-  service:
+  systemd:
     name: "{{ item }}"
     state: "restarted"
-    pattern: "{{ item }}"
   with_items: "{{ almanach_service_names }}"
   failed_when: false
