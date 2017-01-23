@@ -1,0 +1,8 @@
+Code-Review+2: Kevin Carter (cloudnull) <kevin@cloudnull.com>
+Workflow+1: Marc Aubry <maubry@internap.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 23 Jan 2017 21:30:23 +0000
+Reviewed-on: https://review.openstack.org/424317
+Project: openstack/openstack-ansible-os_almanach
+Branch: refs/heads/master
