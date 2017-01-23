@@ -13,4 +13,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-almanach_mongodb_url: mongodb://almanach:secrete@10.100.100.2:27017/admin
+almanach_database_url: mongodb://almanach:secrete@10.100.100.2:27017/admin
