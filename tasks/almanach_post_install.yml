@@ -17,7 +17,7 @@
   file: path={{ almanach_config_dir }} state=directory
 
 - name: Create almanach config file
-  template: src=almanach.cfg.j2 dest={{ almanach_config_file }}
+  template: src=almanach.conf.j2 dest={{ almanach_config_file }}
 
 - name: Create log directory
   file: path={{ almanach_log_dir }} state=directory owner={{ almanach_system_user_name }} group={{ almanach_system_group_name }}

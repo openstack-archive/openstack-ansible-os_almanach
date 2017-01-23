@@ -1,0 +1,28 @@
+[DEFAULT]
+
+[api]
+bind_ip = {{ almanach_bind_ip }}
+bind_port = {{ almanach_bind_port }}
+
+[auth]
+strategy = {{ almanach_auth_strategy }}
+private_key = {{ almanach_auth_token }}
+keystone_username = {{ almanach_keystone_username }}
+keystone_password = {{ almanach_keystone_password }}
+keystone_tenant = {{ almanach_keystone_tenant_name }}
+keystone_url = {{ almanach_keystone_auth_url }}
+
+[collector]
+transport_url = {{ almanach_transport_url }}
+topic = {{ almanach_topic }}
+max_retries = {{ almanach_max_retries }}
+retry_delay = {{ almanach_retry_delay }}
+
+[database]
+driver = {{ almanach_database_driver }}
+connection_url = {{ almanach_database_url }}
+
+[entities]
+volume_existence_threshold = {{ almanach_volume_existence_threshold }}
+instance_metadata = {{ almanach_instance_metadata }}
+instance_image_meta = {{ almanach_instance_image_meta }}
