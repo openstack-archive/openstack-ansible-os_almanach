@@ -13,14 +13,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- include: almanach_init_api_upstart.yml
-  when: inventory_hostname in groups['almanach_api'] and pid1_name == "init"
+- include: almanach_init_systemd.yml
+  vars:
+    program_name: "{{ almanach_api_program_name }}"
+    service_name: "almanach-api"
+    system_user: "{{ almanach_system_user_name }}"
+    system_group: "{{ almanach_system_group_name }}"
+    init_config_overrides: "{{ almanach_api_init_config_overrides }}"
 
-- include: almanach_init_collector_upstart.yml
-  when: inventory_hostname in groups['almanach_collector'] and pid1_name == "init"
-
-- include: almanach_init_api_systemd.yml
-  when: inventory_hostname in groups['almanach_api'] and pid1_name == "systemd"
-
-- include: almanach_init_collector_systemd.yml
-  when: inventory_hostname in groups['almanach_collector'] and pid1_name == "systemd"
+- include: almanach_init_systemd.yml
+  vars:
+    program_name: "{{ almanach_collector_program_name }}"
+    service_name: "almanach-collector"
+    system_user: "{{ almanach_system_user_name }}"
+    system_group: "{{ almanach_system_group_name }}"
+    init_config_overrides: "{{ almanach_collector_init_config_overrides }}"
