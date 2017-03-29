@@ -64,3 +64,6 @@ almanach_bind_ip: 0.0.0.0
 almanach_volume_existence_threshold: 60
 almanach_instance_metadata: ''
 almanach_instance_image_meta: ''
+
+almanach_collector_init_config_overrides: {}
+almanach_api_init_config_overrides: {}
