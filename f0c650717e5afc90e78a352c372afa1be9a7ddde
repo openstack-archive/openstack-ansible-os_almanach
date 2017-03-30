@@ -1,0 +1,9 @@
+Code-Review+2: Frédéric Guillot <fguillot@internap.com>
+Code-Review+2: Jimmy McCrory <jimmy.mccrory@gmail.com>
+Workflow+1: Jimmy McCrory <jimmy.mccrory@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 30 Mar 2017 18:26:59 +0000
+Reviewed-on: https://review.openstack.org/451862
+Project: openstack/openstack-ansible-os_almanach
+Branch: refs/heads/master
