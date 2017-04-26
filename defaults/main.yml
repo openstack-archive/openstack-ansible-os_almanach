@@ -67,3 +67,11 @@ almanach_instance_image_meta: ''
 
 almanach_collector_init_config_overrides: {}
 almanach_api_init_config_overrides: {}
+
+# Timeout (in seconds) for cinder to wait between SIGTERM and SIGKILL
+# Applies to TimeoutSec in systemd, affecting start and stop times.
+# 'sigkill_timeout' is a global option should one desired.
+almanach_sigkill_timeout: 120
+
+# Number of seconds to wait before restarting the service
+almanach_restart_wait: 5

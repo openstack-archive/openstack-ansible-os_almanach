@@ -13,9 +13,10 @@ Group={{ system_group }}
 
 ExecStart={{ almanach_app_dir }}/bin/{{ program_name }} --config-file={{ almanach_config_file }} --log-file={{ almanach_log_file }}
 
-TimeoutSec=300
+# Give a reasonable amount of time for the server to start up/shut down
+TimeoutSec={{ almanach_sigkill_timeout }}
 Restart=on-failure
-RestartSec=150
+RestartSec={{ almanach_restart_wait }}
 
 # This creates a specific slice which all services will operate from
 #  The accounting options give us the ability to see resource usage through
