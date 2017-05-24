@@ -24,7 +24,7 @@
         executable: pip3
     - name: Check the almanach-api
       uri:
-        url: "http://localhost:8000/info"
+        url: "http://localhost:8000/v1/info"
         status_code: 200
       register: result
       until:

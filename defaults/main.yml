@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-almanach_version: 4.0.3
+almanach_version: 4.0.9
 
 almanach_collector_program_name: almanach-collector
 almanach_api_program_name: almanach-api
