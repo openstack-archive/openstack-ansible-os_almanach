@@ -22,7 +22,6 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
-import openstackdocstheme
 import pbr.version
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -39,6 +38,7 @@ import pbr.version
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'openstackdocstheme',
     'reno.sphinxext',
 ]
 
@@ -63,6 +63,11 @@ project = 'OpenStack-Ansible'
 role_name = 'os_almanach'
 target_name = 'openstack-ansible-' + role_name
 title = 'OpenStack-Ansible Release Notes: ' + role_name + 'role'
+
+# openstackdocstheme options
+repository_name = 'openstack/openstack-ansible'
+bug_project = 'openstack-ansible'
+bug_tag = ''
 
 # The link to the browsable source code (for the left hand menu)
 oslosphinx_cgit_link = 'https://git.openstack.org/cgit/openstack/' + target_name
@@ -129,7 +134,7 @@ html_theme = 'openstackdocs'
 # html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = [openstackdocstheme.get_html_theme_path()]
+# html_theme_path = []
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
