@@ -1,3 +1,4 @@
+---
 - name: Install almanach server
   hosts: almanach_all
   user: root
