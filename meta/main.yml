@@ -33,3 +33,6 @@ galaxy_info:
   dependencies:
     - pip_install
     - openstack_openrc
+openstack_ansible_info:
+  maturity: complete
+  created_during: queens
