@@ -18,10 +18,6 @@
   user: root
   gather_facts: false
   tasks:
-    - name: Install httplib2 so we can use the uri module
-      pip:
-        name: httplib2
-        executable: pip3
     - name: Check the almanach-api
       uri:
         url: "http://localhost:8000/v1/info"

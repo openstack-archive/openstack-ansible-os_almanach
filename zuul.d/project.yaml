@@ -1,5 +1,5 @@
 ---
-# Copyright 2016, Internap Inc.
+# Copyright 2017, Rackspace US, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,22 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-galaxy_info:
-  author: fguillot
-  description: Installation and setup of almanach
-  company: Internap
-  license: Apache2
-  min_ansible_version: 1.9
-  platforms:
-  - name: Ubuntu
-    versions:
-      - trusty
-      - xenial
-  galaxy_tags:
-    - cloud
-    - python
-    - openstack
-    - almanach
-    - telemetry
-dependencies:
-  - pip_install
+- project:
+    name: openstack/openstack-ansible-os_almanach
+    check:
+      jobs:
+        - openstack-ansible-linters
+        - openstack-ansible-functional-ubuntu-xenial
+    gate:
+      jobs:
+        - openstack-ansible-linters
+        - openstack-ansible-functional-ubuntu-xenial
