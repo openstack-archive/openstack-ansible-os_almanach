@@ -1,5 +1,5 @@
 ---
-# Copyright 2016, Internap Inc.
+# Copyright 2017, Rackspace US, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,21 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: Playbook for functional testing almanach
-  hosts: almanach_api
-  user: root
-  gather_facts: false
-  tasks:
-    - name: Check the almanach-api
-      uri:
-        url: "http://localhost:8000/info"
-        status_code: 200
-      register: result
-      until:
-        - result is defined
-        - result.status is defined
-        - result.status == 200
-      retries: 5
-      delay: 10
-  vars_files:
-    - test-vars.yml
+- project:
+    name: openstack/openstack-ansible-os_almanach
+    check:
+      jobs:
+        - openstack-ansible-linters
+        - openstack-ansible-functional-ubuntu-xenial
+    gate:
+      jobs:
+        - openstack-ansible-linters
+        - openstack-ansible-functional-ubuntu-xenial

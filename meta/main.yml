@@ -30,6 +30,5 @@ galaxy_info:
     - openstack
     - almanach
     - telemetry
-  dependencies:
-    - pip_install
-    - openstack_openrc
+dependencies:
+  - pip_install
