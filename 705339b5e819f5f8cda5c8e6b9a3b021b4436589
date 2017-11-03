@@ -1,0 +1,9 @@
+Code-Review+2: Jean-Philippe Evrard <jean-philippe.evrard@rackspace.co.uk>
+Code-Review+2: Major Hayden <major@mhtx.net>
+Workflow+1: Major Hayden <major@mhtx.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 03 Nov 2017 16:24:07 +0000
+Reviewed-on: https://review.openstack.org/512729
+Project: openstack/openstack-ansible-os_almanach
+Branch: refs/heads/master
