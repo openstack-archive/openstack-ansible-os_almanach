@@ -31,4 +31,3 @@ galaxy_info:
     - almanach
     - telemetry
 dependencies:
-  - pip_install
