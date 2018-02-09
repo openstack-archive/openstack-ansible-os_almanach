@@ -1,0 +1,9 @@
+Code-Review+2: Markos Chandras (hwoarang) <mchandras@suse.de>
+Code-Review+2: Jesse Pretorius (odyssey4me) <jesse.pretorius@rackspace.co.uk>
+Workflow+1: Jesse Pretorius (odyssey4me) <jesse.pretorius@rackspace.co.uk>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 09 Feb 2018 09:53:18 +0000
+Reviewed-on: https://review.openstack.org/542545
+Project: openstack/openstack-ansible-os_almanach
+Branch: refs/heads/stable/pike
