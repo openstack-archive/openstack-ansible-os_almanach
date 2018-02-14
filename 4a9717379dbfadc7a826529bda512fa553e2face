@@ -1,0 +1,9 @@
+Code-Review+2: Jesse Pretorius (odyssey4me) <jesse.pretorius@rackspace.co.uk>
+Code-Review+2: Major Hayden <major@mhtx.net>
+Workflow+1: Major Hayden <major@mhtx.net>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 14 Feb 2018 15:16:33 +0000
+Reviewed-on: https://review.openstack.org/544141
+Project: openstack/openstack-ansible-os_almanach
+Branch: refs/heads/stable/ocata
