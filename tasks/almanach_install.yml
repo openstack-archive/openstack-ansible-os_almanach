@@ -14,7 +14,8 @@
 # limitations under the License.
 
 - name: Update APT index
-  apt: update_cache=yes
+  apt:
+    update_cache: yes
   become: True
 
 - name: Install apt packages
@@ -26,7 +27,10 @@
   pip:
     name: "{{ almanach_requires_pip_packages }}"
     state: present
-    executable: pip3
 
 - name: Install Almanach
-  pip: name=almanach version={{ almanach_version }} virtualenv={{ almanach_app_dir }} virtualenv_python=python3
+  pip:
+    name: almanach
+    version: "{{ almanach_version }}"
+    virtualenv: "{{ almanach_app_dir }}"
+    virtualenv_python: "python2"

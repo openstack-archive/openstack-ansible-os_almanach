@@ -22,8 +22,7 @@ almanach_service_names:
   - "almanach-api"
   - "almanach-collector"
 
-almanach_requires_apt_packages:
-  - python3-pip
+almanach_requires_apt_packages: []
 
 almanach_requires_pip_packages:
   - virtualenv
