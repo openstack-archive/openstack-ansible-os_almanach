@@ -40,7 +40,7 @@
         name: mongodb
         state: restarted
       when:
-        - mongodb_bind | changed or mongodb_smallfiles | changed
+        - mongodb_bind | changed or mongodb_smallfiles  is changed
       register: mongodb_restart
     - name: Wait for mongodb to come back online after the restart
       wait_for:
@@ -50,7 +50,7 @@
         timeout: 30
       when:
         - mongodb_restart is defined
-        - mongodb_restart | changed
+        - mongodb_restart  is changed
     - name: Test mongodb connectivity
       command: "mongo --host 10.100.100.2 --eval ' '"
       changed_when: False
