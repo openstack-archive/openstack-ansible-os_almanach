@@ -24,19 +24,37 @@
   tags:
     - always
 
+<<<<<<< HEAD
 - include: almanach_pre_install.yml
+=======
+- name: Check init system
+  command: cat /proc/1/comm
+  changed_when: false
+  register: _pid1_name
+  tags:
+    - always
+
+- name: Set the name of pid1
+  set_fact:
+    pid1_name: "{{ _pid1_name.stdout }}"
+  tags:
+    - always
+
+- include_tasks: almanach_pre_install.yml
+>>>>>>> 98f3e25... use include_tasks instead of include
   tags:
     - almanach-install
 
-- include: almanach_install.yml
+- include_tasks: almanach_install.yml
   tags:
     - almanach-install
 
-- include: almanach_post_install.yml
+- include_tasks: almanach_post_install.yml
   tags:
     - almanach-install
     - almanach-config
 
+<<<<<<< HEAD
 - name: Run the systemd service role
   include_role:
     name: systemd_service
@@ -61,6 +79,9 @@
   with_items: "{{ filtered_almanach_services }}"
   loop_control:
     loop_var: service_var
+=======
+- include_tasks: almanach_init.yml
+>>>>>>> 98f3e25... use include_tasks instead of include
   tags:
     - almanach-config
     - systemd-service
