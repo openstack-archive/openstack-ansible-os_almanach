@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- include: almanach_init_systemd.yml
+- include_tasks_tasks: almanach_init_systemd.yml
   vars:
     program_name: "{{ almanach_api_program_name }}"
     service_name: "almanach-api"
@@ -21,7 +21,7 @@
     system_group: "{{ almanach_system_group_name }}"
     init_config_overrides: "{{ almanach_api_init_config_overrides }}"
 
-- include: almanach_init_systemd.yml
+- include_tasks_tasks: almanach_init_systemd.yml
   vars:
     program_name: "{{ almanach_collector_program_name }}"
     service_name: "almanach-collector"
