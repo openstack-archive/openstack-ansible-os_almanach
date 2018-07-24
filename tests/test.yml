@@ -14,16 +14,16 @@
 # limitations under the License.
 
 # Setup the host
-- include: common/test-setup-host.yml
+- import_playbook: common/test-setup-host.yml
 
 # Install RabbitMQ/MariaDB
-- include: common/test-install-infra.yml
+- import_playbook: common/test-install-infra.yml
 
 # Install MongoDB
-- include: test-install-mongodb.yml
+- import_playbook: test-install-mongodb.yml
 
 # Install Almanach
-- include: test-install-almanach.yml
+- import_playbook: test-install-almanach.yml
 
 # Test Almanach
-- include: test-functional-almanach.yml
+- import_playbook: test-functional-almanach.yml
