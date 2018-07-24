@@ -26,13 +26,23 @@
 
 - include: almanach_pre_install.yml
   tags:
-    - almanach-install
+    - always
 
-- include: almanach_install.yml
+- name: Set the name of pid1
+  set_fact:
+    pid1_name: "{{ _pid1_name.stdout }}"
+  tags:
+    - always
+
+- include_tasks: almanach_pre_install.yml
   tags:
     - almanach-install
 
-- include: almanach_post_install.yml
+- include_tasks: almanach_install.yml
+  tags:
+    - almanach-install
+
+- include_tasks: almanach_post_install.yml
   tags:
     - almanach-install
     - almanach-config
