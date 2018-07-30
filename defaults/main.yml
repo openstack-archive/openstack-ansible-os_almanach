@@ -18,15 +18,29 @@ almanach_version: 4.0.9
 almanach_collector_program_name: almanach-collector
 almanach_api_program_name: almanach-api
 
-almanach_service_names:
-  - "almanach-api"
-  - "almanach-collector"
+almanach_venv_tag: untagged
+almanach_bin: "/openstack/venvs/cinder-{{ almanach_venv_tag }}/bin"
 
-almanach_requires_apt_packages:
-  - python3-pip
+almanach_services:
+  almanach-api:
+    group: almanach_all
+    service_name: almanach-api
+    init_config_overrides: "{{ almanach_api_init_config_overrides }}"
+    start_order: 1
+    execstarts: "{{ almanach_bin }}/almanach-api"
+  almanach-collector:
+    group: almanach_all
+    service_name: almanach-collector
+    init_config_overrides: "{{ almanach_collector_init_config_overrides }}"
+    start_order: 2
+    execstarts: "{{ almanach_bin }}/almanach-collector"
 
 almanach_requires_pip_packages:
   - virtualenv
+
+almanach_pip_packages:
+  - "almanach=={{ almanach_version }}"
+  - systemd-python
 
 almanach_system_user_name: almanach
 almanach_system_group_name: almanach
@@ -35,8 +49,6 @@ almanach_system_comment: almanach system user
 
 almanach_log_dir: /var/log/almanach
 almanach_log_file: /var/log/almanach/almanach.log
-
-almanach_app_dir: /opt/almanach
 
 almanach_config_dir: /etc/almanach
 almanach_config_file: /etc/almanach/almanach.conf
