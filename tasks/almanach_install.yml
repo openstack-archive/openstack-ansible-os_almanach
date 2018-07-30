@@ -13,13 +13,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-- name: Update APT index
-  apt: update_cache=yes
-  become: True
-
 - name: Install apt packages
-  apt:
+  package:
     name: "{{ almanach_requires_apt_packages | join(' ') }}"
+    update_cache: yes
+    state: present
+
+# NOTE(cloudnull): This role has no "developer_mode" as such the developer
+#                  packages are simply installed.
+- name: Install developer apt packages
+  package:
+    name: "{{ almanach_developer_mode_distro_packages | join(' ') }}"
+    update_cache: yes
     state: present
 
 - name: Install pip packages
@@ -29,4 +34,8 @@
     executable: pip3
 
 - name: Install Almanach
-  pip: name=almanach version={{ almanach_version }} virtualenv={{ almanach_app_dir }} virtualenv_python=python3
+  pip:
+    name: almanach
+    version: "{{ almanach_version }}"
+    virtualenv: "/openstack/venvs/cinder-{{ almanach_venv_tag }}"
+    virtualenv_python: "python3"
