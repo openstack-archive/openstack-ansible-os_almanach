@@ -22,6 +22,13 @@
     name: "{{ almanach_requires_apt_packages | join(' ') }}"
     state: present
 
+# NOTE(cloudnull): This role has no "developer_mode" as such the developer
+#                  packages are simply installed.
+- name: Install developer apt packages
+  apt:
+    name: "{{ almanach_developer_mode_distro_packages | join(' ') }}"
+    state: present
+
 - name: Install pip packages
   pip:
     name: "{{ almanach_requires_pip_packages }}"
@@ -29,4 +36,8 @@
     executable: pip3
 
 - name: Install Almanach
-  pip: name=almanach version={{ almanach_version }} virtualenv={{ almanach_app_dir }} virtualenv_python=python3
+  pip:
+    name: almanach
+    version: "{{ almanach_version }}"
+    virtualenv: "/openstack/venvs/cinder-{{ almanach_venv_tag }}"
+    virtualenv_python: "python3"
