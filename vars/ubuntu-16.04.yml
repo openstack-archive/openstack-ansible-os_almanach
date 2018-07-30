@@ -15,3 +15,11 @@
 
 ## APT Cache options
 cache_timeout: 600
+
+almanach_requires_apt_packages:
+  - python3-pip
+
+almanach_developer_mode_distro_packages:
+  - build-essential
+  - libsystemd-dev
+  - pkg-config
