@@ -26,7 +26,7 @@
 
 - name: Restart almanach services
   systemd:
-    name: "{{ item }}"
+    name: "{{ item.service_name }}"
     state: "restarted"
-  with_items: "{{ almanach_service_names }}"
+  with_items: "{{ filtered_almanach_services }}"
   failed_when: false
