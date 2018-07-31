@@ -17,6 +17,7 @@
       jobs:
         - openstack-ansible-linters
         - openstack-ansible-functional-ubuntu-xenial
+        - openstack-ansible-functional-ubuntu-bionic
     experimental:
       jobs:
         - openstack-ansible-integrated-deploy-aio
@@ -24,3 +25,4 @@
       jobs:
         - openstack-ansible-linters
         - openstack-ansible-functional-ubuntu-xenial
+        - openstack-ansible-functional-ubuntu-bionic
