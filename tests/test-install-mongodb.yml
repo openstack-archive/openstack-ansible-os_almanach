@@ -62,6 +62,7 @@
         password: secrete
         roles: 'readWrite,dbAdmin'
         state: present
+      no_log: true
   vars:
     packages_mongodb:
       - mongodb-clients
