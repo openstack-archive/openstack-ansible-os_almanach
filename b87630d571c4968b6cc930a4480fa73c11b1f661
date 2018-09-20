@@ -1,0 +1,10 @@
+Code-Review+2: Jean-Philippe Evrard <jean-philippe@evrard.me>
+Code-Review+1: wu.chunyang <wu.chunyang@99cloud.net>
+Code-Review+2: Jesse Pretorius (odyssey4me) <jesse.pretorius@rackspace.co.uk>
+Workflow+1: Jesse Pretorius (odyssey4me) <jesse.pretorius@rackspace.co.uk>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 20 Sep 2018 13:53:52 +0000
+Reviewed-on: https://review.openstack.org/595044
+Project: openstack/openstack-ansible-os_almanach
+Branch: refs/heads/stable/pike
