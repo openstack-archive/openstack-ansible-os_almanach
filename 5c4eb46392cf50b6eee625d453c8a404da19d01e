@@ -1,0 +1,8 @@
+Code-Review+2: Jesse Pretorius (odyssey4me) <jesse.pretorius@rackspace.co.uk>
+Workflow+1: Jesse Pretorius (odyssey4me) <jesse.pretorius@rackspace.co.uk>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 27 Feb 2019 10:11:52 +0000
+Reviewed-on: https://review.openstack.org/639519
+Project: openstack/openstack-ansible-os_almanach
+Branch: refs/heads/master
