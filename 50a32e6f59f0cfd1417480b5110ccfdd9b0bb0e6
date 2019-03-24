@@ -1,0 +1,8 @@
+Code-Review+2: Mohammed Naser <mnaser@vexxhost.com>
+Workflow+1: Mohammed Naser <mnaser@vexxhost.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sun, 24 Mar 2019 19:57:18 +0000
+Reviewed-on: https://review.openstack.org/645911
+Project: openstack/openstack-ansible-os_almanach
+Branch: refs/heads/master
