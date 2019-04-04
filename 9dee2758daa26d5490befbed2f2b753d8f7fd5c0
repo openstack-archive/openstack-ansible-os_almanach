@@ -1,0 +1,9 @@
+Code-Review+2: Jonathan Rosser <jonathan.rosser@rd.bbc.co.uk>
+Code-Review+2: Dmitriy Rabotjagov (noonedeadpunk) <noonedeadpunk@ya.ru>
+Workflow+1: Dmitriy Rabotjagov (noonedeadpunk) <noonedeadpunk@ya.ru>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 04 Apr 2019 07:47:34 +0000
+Reviewed-on: https://review.openstack.org/649826
+Project: openstack/openstack-ansible-os_almanach
+Branch: refs/heads/master
